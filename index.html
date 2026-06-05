@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouthPerks - Student Discounts That Actually Slay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>YouthPerks — Student discounts that matter | Launching 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,811 +14,524 @@
         }
 
         :root {
-            --electric-blue: #4361ee;
-            --neon-cyan: #00f7ff;
-            --violet: #8a2be2;
-            --pure-white: #ffffff;
-            --ice-white: #f8faff;
-            --gray-light: #f0f5ff;
-            --text-dark: #1a1a2e;
-            --text-light: #666699;
-            --gradient-primary: linear-gradient(135deg, var(--electric-blue), var(--violet));
-            --gradient-cyan: linear-gradient(135deg, var(--neon-cyan), #00b4ff);
-            --shadow-soft: 0 10px 30px rgba(67, 97, 238, 0.15);
-            --shadow-glow: 0 0 25px rgba(0, 247, 255, 0.3);
+            --primary: #3b3bff;
+            --primary-dark: #2a2acb;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --grad-primary: linear-gradient(135deg, #3b3bff, #8b5cf6);
+            --grad-accent: linear-gradient(120deg, #06b6d4, #3b82f6);
+            --bg-light: #fafcff;
+            --surface-white: #ffffff;
+            --gray-100: #f3f4f8;
+            --gray-200: #e5e9f0;
+            --gray-600: #5b677b;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 20px 35px -12px rgba(59, 59, 255, 0.12);
+            --shadow-glow: 0 0 18px rgba(59, 59, 255, 0.25);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--ice-white);
-            color: var(--text-dark);
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--gray-800);
+            scroll-behavior: smooth;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* Header */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--gray-100); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 12px; }
+
         .header {
             position: fixed;
             top: 0;
-            width: 100%;
-            padding: 1.2rem 5%;
+            left: 0;
+            right: 0;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(59, 59, 255, 0.08);
+            transition: all 0.25s ease;
         }
 
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
+            font-size: 1.9rem;
             font-weight: 800;
-            background: var(--gradient-primary);
+            background: var(--grad-primary);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: var(--violet);
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
         }
 
         .badge {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            background: var(--grad-primary);
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: var(--shadow-soft);
-            animation: pulse 2s infinite;
+            color: white;
+            box-shadow: var(--shadow-sm);
+            animation: subtlePulse 1.8s infinite;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes subtlePulse {
+            0% { opacity: 0.9; transform: scale(1);}
+            50% { opacity: 1; transform: scale(1.02); background: linear-gradient(135deg, #4b4bff, #9b6cf6);}
+            100% { opacity: 0.9; transform: scale(1);}
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 5%;
-            padding-top: 100px;
+            padding: 7rem 5% 5rem;
             position: relative;
-            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            isolation: isolate;
         }
 
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-text {
-            max-width: 700px;
+        .hero-content { max-width: 1280px; margin: 0 auto; width: 100%; }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
         }
 
         .dynamic-headline {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
-            font-family: 'Poppins', sans-serif;
         }
 
-        .dynamic-text {
-            display: inline-block;
-            position: relative;
-            background: var(--gradient-primary);
+        .gradient-text {
+            background: var(--grad-primary);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-shift 3s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
 
         .tagline {
-            font-size: 1.4rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 90%;
+            line-height: 1.5;
         }
 
-        /* Glitch Effect */
-        .glitch {
-            position: relative;
-            display: inline-block;
-            color: var(--electric-blue);
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00ff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: 2px 0 #00ffff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(42px, 9999px, 44px, 0); }
-            5% { clip: rect(12px, 9999px, 59px, 0); }
-            10% { clip: rect(48px, 9999px, 29px, 0); }
-            15% { clip: rect(42px, 9999px, 73px, 0); }
-            20% { clip: rect(63px, 9999px, 27px, 0); }
-            25% { clip: rect(34px, 9999px, 55px, 0); }
-            30% { clip: rect(86px, 9999px, 73px, 0); }
-            35% { clip: rect(20px, 9999px, 20px, 0); }
-            40% { clip: rect(26px, 9999px, 60px, 0); }
-            45% { clip: rect(25px, 9999px, 66px, 0); }
-            50% { clip: rect(57px, 9999px, 98px, 0); }
-            55% { clip: rect(5px, 9999px, 46px, 0); }
-            60% { clip: rect(82px, 9999px, 31px, 0); }
-            65% { clip: rect(54px, 9999px, 27px, 0); }
-            70% { clip: rect(28px, 9999px, 99px, 0); }
-            75% { clip: rect(45px, 9999px, 69px, 0); }
-            80% { clip: rect(23px, 9999px, 85px, 0); }
-            85% { clip: rect(54px, 9999px, 84px, 0); }
-            90% { clip: rect(45px, 9999px, 47px, 0); }
-            95% { clip: rect(37px, 9999px, 20px, 0); }
-            100% { clip: rect(4px, 9999px, 91px, 0); }
-        }
-
-        @keyframes glitch-anim2 {
-            0% { clip: rect(65px, 9999px, 100px, 0); }
-            5% { clip: rect(52px, 9999px, 74px, 0); }
-            10% { clip: rect(79px, 9999px, 85px, 0); }
-            15% { clip: rect(75px, 9999px, 5px, 0); }
-            20% { clip: rect(67px, 9999px, 61px, 0); }
-            25% { clip: rect(14px, 9999px, 79px, 0); }
-            30% { clip: rect(1px, 9999px, 66px, 0); }
-            35% { clip: rect(86px, 9999px, 30px, 0); }
-            40% { clip: rect(23px, 9999px, 98px, 0); }
-            45% { clip: rect(85px, 9999px, 72px, 0); }
-            50% { clip: rect(71px, 9999px, 75px, 0); }
-            55% { clip: rect(2px, 9999px, 48px, 0); }
-            60% { clip: rect(30px, 9999px, 16px, 0); }
-            65% { clip: rect(59px, 9999px, 50px, 0); }
-            70% { clip: rect(41px, 9999px, 62px, 0); }
-            75% { clip: rect(2px, 9999px, 82px, 0); }
-            80% { clip: rect(47px, 9999px, 73px, 0); }
-            85% { clip: rect(3px, 9999px, 27px, 0); }
-            90% { clip: rect(40px, 9999px, 86px, 0); }
-            95% { clip: rect(45px, 9999px, 72px, 0); }
-            100% { clip: rect(23px, 9999px, 49px, 0); }
-        }
-
-        /* Download buttons */
         .download-buttons {
             display: flex;
-            gap: 1.5rem;
-            margin: 3rem 0;
             flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0 1.8rem;
         }
 
         .store-btn {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            padding: 1.2rem 2rem;
-            background: var(--text-dark);
+            gap: 0.75rem;
+            background: var(--gray-900);
+            padding: 0.9rem 1.6rem;
+            border-radius: 44px;
             color: white;
-            border-radius: 15px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: var(--shadow-soft);
-            border: 2px solid transparent;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(255,255,255,0.1);
         }
+        .store-btn i { font-size: 1.8rem; }
+        .store-btn .text { display: flex; flex-direction: column; text-align: left; }
+        .store-btn .text span:first-child { font-size: 0.7rem; opacity: 0.7; }
+        .store-btn .text span:last-child { font-size: 1rem; font-weight: 700; }
+        .store-btn.apple { background: #000000; }
+        .store-btn.google { background: var(--primary-dark); }
+        .store-btn.web { background: var(--secondary); }
+        .store-btn:hover { transform: translateY(-4px); filter: brightness(1.05); box-shadow: var(--shadow-lg); }
 
-        .store-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.2);
-            border-color: var(--electric-blue);
-        }
-
-        .store-btn.apple {
-            background: #000;
-        }
-
-        .store-btn.google {
-            background: var(--electric-blue);
-        }
-
-        .store-btn.web {
-            background: var(--violet);
-        }
-
-        .store-btn i {
-            font-size: 2rem;
-            margin-right: 1rem;
-        }
-
-        .store-btn .text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1.3;
-        }
-
-        .store-btn .text span:first-child {
-            font-size: 0.8rem;
-            opacity: 0.9;
-        }
-
-        .store-btn .text span:last-child {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        /* Floating elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 20px;
-            background: rgba(67, 97, 238, 0.1);
-            backdrop-filter: blur(10px);
-            z-index: -1;
-            animation: float 6s ease-in-out infinite;
-            border: 1px solid rgba(67, 97, 238, 0.2);
-        }
-
-        .floating-element:nth-child(1) {
-            width: 100px;
-            height: 100px;
-            top: 15%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            right: 8%;
-            animation-delay: 0.5s;
-        }
-
-        .floating-element:nth-child(3) {
-            width: 80px;
-            height: 80px;
-            top: 40%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        /* Contact section */
-        .contact-section {
-            padding: 6rem 5%;
+        /* Clean visual card - simple and professional */
+        .info-card {
             background: white;
-            border-radius: 40px 40px 0 0;
-            margin-top: 4rem;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .section-title {
-            font-size: 3rem;
+            border-radius: 36px;
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
             text-align: center;
-            margin-bottom: 4rem;
-            font-weight: 800;
-            font-family: 'Poppins', sans-serif;
+            border: 1px solid rgba(59,59,255,0.08);
         }
-
-        .section-title span {
-            background: var(--gradient-primary);
+        .info-card i {
+            font-size: 3rem;
+            background: var(--grad-primary);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .info-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .info-card p {
+            color: var(--gray-600);
+            line-height: 1.5;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-card {
-            background: var(--ice-white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid transparent;
+        /* Launch timer - PKT timezone */
+        .launch-timer-section { padding: 2rem 5%; max-width: 1280px; margin: 0 auto; }
+        .timer-card {
+            background: var(--grad-primary);
+            border-radius: 48px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: white;
+            box-shadow: var(--shadow-glow);
             position: relative;
             overflow: hidden;
         }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+        .timer-card h3 { font-size: 1.9rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .timer-sub { font-size: 1rem; opacity: 0.9; margin-bottom: 1.8rem; }
+        .countdown { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        .time-block {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            padding: 1rem 1.5rem;
+            border-radius: 32px;
+            min-width: 100px;
+            transition: transform 0.2s;
         }
+        .time-number { font-size: 2.8rem; font-weight: 800; line-height: 1; font-family: monospace; }
+        .time-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
 
-        .contact-card:hover::before {
-            transform: scaleX(1);
+        /* perks grid (real features, clean) */
+        .perks-showcase { padding: 3rem 5%; max-width: 1280px; margin: 0 auto; }
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(67, 97, 238, 0.15);
-            border-color: var(--electric-blue);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .contact-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .contact-desc {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .contact-email {
-            display: inline-block;
-            color: var(--electric-blue);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .contact-email:hover {
-            color: var(--violet);
-            transform: translateX(5px);
-        }
-
-        .contact-email::after {
-            content: '→';
-            position: absolute;
-            right: -20px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .contact-email:hover::after {
-            right: -25px;
-            opacity: 1;
-        }
-
-        /* CTA for brands */
-        .brand-cta {
-            background: var(--gradient-primary);
-            padding: 4rem 5%;
+        .perk-item {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem 1.5rem;
             text-align: center;
-            border-radius: 30px;
-            margin: 4rem auto;
-            max-width: 900px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-100);
+            box-shadow: var(--shadow-sm);
+            animation: fadeUp 0.6s ease backwards;
+        }
+        .perk-item:nth-child(1) { animation-delay: 0.1s; }
+        .perk-item:nth-child(2) { animation-delay: 0.2s; }
+        .perk-item:nth-child(3) { animation-delay: 0.3s; }
+        .perk-item:nth-child(4) { animation-delay: 0.4s; }
+        .perk-item:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: var(--shadow-lg); }
+        .perk-icon { font-size: 2.5rem; background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; }
+        .perk-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+
+        /* brand cta */
+        .brand-cta {
+            background: var(--grad-primary);
+            margin: 3rem 5%;
+            padding: 3.5rem 2rem;
+            border-radius: 48px;
+            text-align: center;
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-glow);
         }
-
-        .brand-cta::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            top: -50%;
-            left: -50%;
-            opacity: 0.3;
-            animation: moveBackground 20s linear infinite;
-        }
-
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        .brand-cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            position: relative;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .brand-cta p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-        }
-
+        .brand-cta h2 { font-size: 2.4rem; color: white; margin-bottom: 1rem; }
+        .brand-cta p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem; }
         .brand-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
             background: white;
-            color: var(--electric-blue);
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            font-size: 1.2rem;
+            color: var(--primary);
+            padding: 1rem 2.2rem;
+            border-radius: 60px;
             font-weight: 700;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: transform 0.2s;
         }
+        .brand-btn:hover { transform: scale(1.02); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
 
-        .brand-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 4rem 5%;
-            text-align: center;
-            background: var(--text-dark);
-            color: white;
-        }
-
-        .footer-logo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-cyan);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
+        /* contact section */
+        .contact-section { padding: 5rem 5%; background: white; border-radius: 48px 48px 0 0; }
+        .section-title { font-size: 2.6rem; text-align: center; margin-bottom: 3rem; font-weight: 700; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background: var(--bg-light);
+            padding: 2rem 1.6rem;
+            border-radius: 32px;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(59,59,255,0.08);
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: var(--shadow-lg); }
+        .contact-icon { font-size: 2.4rem; background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1.3rem; }
+        .contact-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .contact-email { display: inline-block; margin-top: 1rem; color: var(--primary); font-weight: 600; text-decoration: none; border-bottom: 1px dashed var(--primary); cursor: pointer; }
+
+        /* newsletter */
+        .newsletter {
+            background: var(--gray-100);
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 2rem 5% 3rem;
+            text-align: center;
+        }
+        .newsletter-form {
+            display: flex;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 550px;
+            margin: 1.5rem auto 0;
+        }
+        .newsletter-form input {
+            flex: 2;
+            padding: 1rem 1.2rem;
+            border-radius: 60px;
+            border: 1px solid var(--gray-200);
+            font-size: 1rem;
+            outline: none;
+        }
+        .newsletter-form input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(59,59,255,0.1); }
+        .newsletter-form button {
+            background: var(--grad-primary);
+            border: none;
+            padding: 0 1.8rem;
+            border-radius: 60px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
         }
 
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .footer {
+            background: var(--gray-900);
+            padding: 3rem 5%;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
         }
-
-        .footer-links a:hover {
-            color: var(--neon-cyan);
-        }
-
-        .copyright {
-            color: rgba(255, 255, 255, 0.5);
+        .footer-logo { font-size: 2rem; font-weight: 800; background: var(--grad-accent); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0; }
+        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--accent); }
+        .toast-message {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--gray-900);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
             font-size: 0.9rem;
-            margin-top: 2rem;
+            font-weight: 500;
+            z-index: 1100;
+            background: rgba(15, 23, 42, 0.95);
+            transition: transform 0.3s ease;
+            pointer-events: none;
         }
+        .toast-message.show { transform: translateX(-50%) translateY(0); }
 
-        /* Domain note */
-        .domain-note {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            display: inline-block;
-            box-shadow: var(--shadow-soft);
-            margin-top: 2rem;
-        }
-
-        /* Mobile responsiveness */
         @media (max-width: 992px) {
-            .dynamic-headline {
-                font-size: 3.2rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .dynamic-headline { font-size: 2.8rem; }
+            .tagline { max-width: 100%; }
+            .download-buttons { justify-content: center; }
         }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem 5%;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .dynamic-headline {
-                font-size: 2.5rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .store-btn {
-                padding: 1rem 1.5rem;
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .download-buttons {
-                justify-content: center;
-            }
-            
-            .brand-cta h2 {
-                font-size: 2.2rem;
-            }
-            
-            .floating-element {
-                display: none;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .dynamic-headline {
-                font-size: 2rem;
-            }
-            
-            .hero {
-                padding-top: 120px;
-            }
-            
-            .contact-section {
-                padding: 4rem 5%;
-            }
-            
-            .contact-card {
-                padding: 2rem;
-            }
-            
-            .brand-cta {
-                padding: 3rem 5%;
-                margin: 2rem 5%;
-            }
-            
-            .brand-cta h2 {
-                font-size: 1.8rem;
-            }
+        @media (max-width: 640px) {
+            .dynamic-headline { font-size: 2.2rem; }
+            .time-block { padding: 0.8rem 1rem; min-width: 70px; }
+            .time-number { font-size: 2rem; }
+            .brand-cta h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating background elements -->
-    <div class="floating-element"></div>
-    <div class="floating-element"></div>
-    <div class="floating-element"></div>
 
-    <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo">youth<span>perks</span></a>
-        <div class="badge">Launching Soon</div>
-    </header>
+<header class="header">
+    <a href="#" class="logo">youth<span style="background:transparent; -webkit-text-fill-color:initial; color:var(--secondary);">perks</span></a>
+    <div class="badge">🇵🇰 Launching Aug 10, 2026</div>
+</header>
 
-    <!-- Hero Section -->
+<main>
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="dynamic-headline">
-                    Student Discounts<br>
-                    That Actually <span class="glitch" data-text="Slay">Slay</span>
-                </h1>
-                
-                <p class="tagline">Unlock exclusive perks, deals, and discounts tailored just for students. Your wallet will thank you later.</p>
-                
-                <div class="download-buttons">
-                    <a href="#" class="store-btn apple">
-                        <i class="fab fa-apple"></i>
-                        <div class="text">
-                            <span>Download on the</span>
-                            <span>App Store</span>
-                        </div>
-                    </a>
-                    
-                    <a href="#" class="store-btn google">
-                        <i class="fab fa-google-play"></i>
-                        <div class="text">
-                            <span>Get it on</span>
-                            <span>Google Play</span>
-                        </div>
-                    </a>
-                    
-                    <a href="#" class="store-btn web">
-                        <i class="fas fa-globe"></i>
-                        <div class="text">
-                            <span>Access our</span>
-                            <span>Web App</span>
-                        </div>
-                    </a>
+            <div class="hero-grid">
+                <div>
+                    <h1 class="dynamic-headline">
+                        Student discounts<br>
+                        that <span class="gradient-text">actually work</span>
+                    </h1>
+                    <p class="tagline">Exclusive student deals from 500+ brands. Verified, updated daily & tailored to your campus life.</p>
+                    <div class="download-buttons">
+                        <a href="#" class="store-btn apple" id="appStoreBtn">
+                            <i class="fab fa-apple"></i>
+                            <div class="text"><span>Download on the</span><span>App Store</span></div>
+                        </a>
+                        <a href="#" class="store-btn google" id="googlePlayBtn">
+                            <i class="fab fa-google-play"></i>
+                            <div class="text"><span>Get it on</span><span>Google Play</span></div>
+                        </a>
+                        <a href="#" class="store-btn web" id="webAppBtn">
+                            <i class="fas fa-globe"></i>
+                            <div class="text"><span>Access our</span><span>Web App</span></div>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="domain-note">
-                    <p><strong>Domain:</strong> youthperks.com | Find us on your app stores soon!</p>
+                <div class="info-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Verified Student Perks</h3>
+                    <p>Join thousands of students saving money with exclusive discounts from top brands. No gimmicks — just real savings.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1rem;"></i> <span style="font-size: 0.85rem; color: var(--gray-600);">Trusted by student communities</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA for brands -->
+    <!-- PAKISTAN STANDARD TIME COUNTDOWN: August 10, 2026, 4:00 PM PKT (UTC+5) -->
+    <div class="launch-timer-section">
+        <div class="timer-card">
+            <h3><i class="fas fa-clock"></i> Official Launch Countdown</h3>
+            <div class="timer-sub"><i class="fas fa-map-marker-alt"></i> August 10, 2026 — 4:00 PM PKT (Pakistan Time)</div>
+            <div class="countdown" id="countdownContainer">
+                <div class="time-block"><div class="time-number" id="days">00</div><div class="time-label">DAYS</div></div>
+                <div class="time-block"><div class="time-number" id="hours">00</div><div class="time-label">HOURS</div></div>
+                <div class="time-block"><div class="time-number" id="minutes">00</div><div class="time-label">MINUTES</div></div>
+                <div class="time-block"><div class="time-number" id="seconds">00</div><div class="time-label">SECONDS</div></div>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">🚀 Get ready — early access for subscribers</p>
+        </div>
+    </div>
+
+    <!-- Real perks (clean, professional) -->
+    <div class="perks-showcase">
+        <h2 class="section-title" style="margin-bottom: 1rem;">Why join <span class="gradient-text">YouthPerks?</span></h2>
+        <div class="perks-grid">
+            <div class="perk-item"><i class="fas fa-shield-alt perk-icon"></i><div class="perk-title">Verified Exclusives</div><p>Hand-picked student-only discounts from trusted brands.</p></div>
+            <div class="perk-item"><i class="fas fa-bolt perk-icon"></i><div class="perk-title">Real-time Savings</div><p>Instant coupon codes, no hidden fees — just savings.</p></div>
+            <div class="perk-item"><i class="fas fa-calendar-week perk-icon"></i><div class="perk-title">Weekly Drops</div><p>New deals every week, curated for students like you.</p></div>
+            <div class="perk-item"><i class="fas fa-mobile-alt perk-icon"></i><div class="perk-title">Seamless Access</div><p>One app, one student ID — unlock hundreds of offers.</p></div>
+        </div>
+    </div>
+
     <section class="brand-cta">
-        <h2>Want your brand on YouthPerks?</h2>
-        <p>Join hundreds of brands already offering exclusive discounts to students worldwide. Partner with us to reach the next generation of consumers.</p>
-        <a href="mailto:partners@youthperks.com" class="brand-btn">Email: partners@youthperks.com</a>
+        <h2>Partner with YouthPerks</h2>
+        <p>Reach millions of students across the globe — feature your brand in our app and get discovered by Gen Z.</p>
+        <a href="mailto:partners@youthperks.com" class="brand-btn">partner@youthperks.com <i class="fas fa-arrow-right"></i></a>
     </section>
 
-    <!-- Contact section -->
     <section class="contact-section">
-        <h2 class="section-title">Get in <span>Touch</span></h2>
+        <h2 class="section-title">Connect with <span class="gradient-text">us</span></h2>
         <div class="contact-grid">
-            <div class="contact-card">
-                <i class="fas fa-headset contact-icon"></i>
-                <h3 class="contact-title">Student Support</h3>
-                <p class="contact-desc">Having issues or questions about YouthPerks? Our support team is here to help you out.</p>
-                <a href="mailto:support@youthperks.com" class="contact-email">support@youthperks.com</a>
-            </div>
-            
-            <div class="contact-card">
-                <i class="fas fa-handshake contact-icon"></i>
-                <h3 class="contact-title">Brand Partnerships</h3>
-                <p class="contact-desc">Interested in listing your brand or business on YouthPerks? Let's create amazing student offers together.</p>
-                <a href="mailto:partners@youthperks.com" class="contact-email">partners@youthperks.com</a>
-            </div>
-            
-            <div class="contact-card">
-                <i class="fas fa-newspaper contact-icon"></i>
-                <h3 class="contact-title">Press & Media</h3>
-                <p class="contact-desc">For media inquiries, collaboration requests, or press releases, reach out to our communications team.</p>
-                <a href="mailto:press@youthperks.com" class="contact-email">press@youthperks.com</a>
-            </div>
-            
-            <div class="contact-card">
-                <i class="fas fa-comment-dots contact-icon"></i>
-                <h3 class="contact-title">Feedback & Suggestions</h3>
-                <p class="contact-desc">We value your input! Share your thoughts and help us make YouthPerks even better.</p>
-                <a href="mailto:feedback@youthperks.com" class="contact-email">feedback@youthperks.com</a>
-            </div>
-            
-            <div class="contact-card">
-                <i class="fas fa-envelope contact-icon"></i>
-                <h3 class="contact-title">General Inquiries</h3>
-                <p class="contact-desc">For any other questions or just to say hello, feel free to drop us a line at our friendly catch-all email.</p>
-                <a href="mailto:hello@youthperks.com" class="contact-email">hello@youthperks.com</a>
-            </div>
+            <div class="contact-card"><i class="fas fa-life-ring contact-icon"></i><h3 class="contact-title">Student Support</h3><p>24/7 help — we're here for you.</p><a class="contact-email copy-email" data-email="support@youthperks.com">support@youthperks.com</a></div>
+            <div class="contact-card"><i class="fas fa-chart-line contact-icon"></i><h3 class="contact-title">Brand Partnerships</h3><p>List your offers & reach students.</p><a class="contact-email copy-email" data-email="partners@youthperks.com">partners@youthperks.com</a></div>
+            <div class="contact-card"><i class="fas fa-microphone-alt contact-icon"></i><h3 class="contact-title">Press & Media</h3><p>Media kit & interview requests.</p><a class="contact-email copy-email" data-email="press@youthperks.com">press@youthperks.com</a></div>
+            <div class="contact-card"><i class="fas fa-comment-dots contact-icon"></i><h3 class="contact-title">Feedback</h3><p>Shape the future of student perks.</p><a class="contact-email copy-email" data-email="feedback@youthperks.com">feedback@youthperks.com</a></div>
+            <div class="contact-card"><i class="fas fa-envelope-open-text contact-icon"></i><h3 class="contact-title">General</h3><p>Anything else? Let's talk.</p><a class="contact-email copy-email" data-email="hello@youthperks.com">hello@youthperks.com</a></div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logo">youthperks</div>
-        <p>Unlocking student life, one perk at a time.</p>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#contact">Contact</a>
-            <a href="mailto:partners@youthperks.com">Partnerships</a>
-            <a href="mailto:press@youthperks.com">Press</a>
-            <a href="mailto:feedback@youthperks.com">Feedback</a>
-        </div>
-        <p class="copyright">© 2023 YouthPerks.com. All rights reserved. Coming soon to app stores near you.</p>
-    </footer>
+    <div class="newsletter">
+        <h3 style="font-size: 1.8rem; font-weight: 700;">🎁 Get early access & exclusive drops</h3>
+        <p>Subscribe for launch updates + secret discount codes before everyone else.</p>
+        <div class="newsletter-form"><input type="email" id="newsEmail" placeholder="Your student email address"><button id="subscribeBtn">Notify me →</button></div>
+        <p id="newsFeedback" style="margin-top: 1rem; font-size: 0.85rem; color: var(--primary);"></p>
+    </div>
+</main>
 
-    <script>
-        // Glitch effect enhancement
-        const glitchElement = document.querySelector('.glitch');
-        
-        // Add hover effect to glitch
-        glitchElement.addEventListener('mouseenter', function() {
-            this.style.animation = 'glitch-anim 0.5s infinite';
-        });
-        
-        glitchElement.addEventListener('mouseleave', function() {
-            this.style.animation = 'glitch-anim 5s infinite linear alternate-reverse';
-        });
+<footer class="footer">
+    <div class="footer-logo">youthperks</div>
+    <p>Unlocking student life, one perk at a time.</p>
+    <div class="footer-links"><a href="#" id="footerHome">Home</a><a href="#" id="footerContact">Contact</a><a href="mailto:partners@youthperks.com">Partnerships</a><a href="mailto:press@youthperks.com">Press</a><a href="#" id="footerFeedbackLink">Feedback</a></div>
+    <p class="copyright">© 2026 YouthPerks.com — Launching August 10, 2026 (PKT). All trademarks belong to their owners.</p>
+</footer>
+<div id="toastMsg" class="toast-message">✨ Copied!</div>
 
-        // Floating elements animation
-        const floatingElements = document.querySelectorAll('.floating-element');
-        floatingElements.forEach((el, index) => {
-            el.style.animationDelay = `${index * 0.5}s`;
-        });
-
-        // Hover effects for contact cards
-        const contactCards = document.querySelectorAll('.contact-card');
-        contactCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-10px) scale(1)';
-            });
-        });
-
-        // Animate store buttons on hover
-        const storeButtons = document.querySelectorAll('.store-btn');
-        storeButtons.forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) rotate(1deg)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-5px) rotate(0deg)';
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Add subtle scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.padding = '0.8rem 5%';
-                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.padding = '1.2rem 5%';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+<script>
+    (function() {
+        // PAKISTAN STANDARD TIME (UTC+5) — August 10, 2026, 16:00 PKT (UTC 11:00)
+        const targetDatePKT = new Date(Date.UTC(2026, 7, 10, 11, 0, 0));
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDatePKT - now;
+            if (diff <= 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
             }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (86400000)) / 3600000);
+            const minutes = Math.floor((diff % 3600000) / 60000);
+            const seconds = Math.floor((diff % 60000) / 1000);
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Toast & email copy
+        const toast = document.getElementById('toastMsg');
+        function showToast(msg) { toast.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2400); }
+        document.querySelectorAll('.copy-email').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const email = el.getAttribute('data-email');
+                if(email) { navigator.clipboard.writeText(email); showToast(`📧 ${email} copied!`); }
+            });
         });
-    </script>
+        ['appStoreBtn', 'googlePlayBtn', 'webAppBtn'].forEach(id => {
+            const btn = document.getElementById(id);
+            if(btn) btn.addEventListener('click', (e) => { e.preventDefault(); showToast("🚀 Launching August 10, 2026 (PKT). Join the waitlist!"); });
+        });
+        const subBtn = document.getElementById('subscribeBtn');
+        const newsEmail = document.getElementById('newsEmail');
+        const newsFeedback = document.getElementById('newsFeedback');
+        if(subBtn) {
+            subBtn.addEventListener('click', () => {
+                const email = newsEmail.value.trim();
+                if(!email || !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
+                    newsFeedback.innerText = "⚠️ Valid email required"; newsFeedback.style.color = "#e11d48";
+                    setTimeout(() => newsFeedback.innerText = "", 2500); return;
+                }
+                newsFeedback.innerText = "🎉 You're on the VIP list! Early access locked.";
+                newsFeedback.style.color = "#3b3bff";
+                localStorage.setItem('youthperks_waitlist', email);
+                newsEmail.value = '';
+                setTimeout(() => newsFeedback.innerText = "", 3500);
+                showToast("✅ Subscribed! Thank you.");
+            });
+        }
+        document.getElementById('footerHome')?.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        document.getElementById('footerContact')?.addEventListener('click', (e) => { e.preventDefault(); document.querySelector('.contact-section')?.scrollIntoView({ behavior: 'smooth' }); });
+        document.getElementById('footerFeedbackLink')?.addEventListener('click', (e) => { e.preventDefault(); const fb = Array.from(document.querySelectorAll('.contact-card')).find(c => c.innerText.includes('Feedback')); if(fb) fb.scrollIntoView({ behavior: 'smooth' }); });
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => { header.style.padding = window.scrollY > 60 ? '0.7rem 5%' : '1rem 5%'; });
+    })();
+</script>
 </body>
 </html>
