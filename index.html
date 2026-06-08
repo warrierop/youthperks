@@ -6,7 +6,7 @@
 <title>YouthPerks — Student Discounts | Launching Aug 10, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -33,7 +33,7 @@
 }
 
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(180deg,#f7f8ff 0%,#ffffff 58%);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.6;}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(180deg,#f7f8ff 0%,#ffffff 58%);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.6;}
 body.page-ready{opacity:1;transform:translateY(0);}
 
 /* ─── SPLASH SCREEN ──────────────────────────────── */
@@ -61,7 +61,7 @@ body.page-ready{opacity:1;transform:translateY(0);}
 #splash.gone{opacity:0;visibility:hidden;pointer-events:none}
 .splash-brand{
   display:flex;align-items:center;gap:12px;
-  font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   font-size:clamp(2rem,6vw,3.5rem);font-weight:800;color:#fff;
   animation:splashEnter .75s ease both;
   z-index:1;
@@ -73,7 +73,7 @@ body.page-ready{opacity:1;transform:translateY(0);}
 .splash-brand-text{display:inline-flex;align-items:center;gap:6px;}
 .splash-brand-text .s-dot{color:var(--blue-mid);}
 .splash-subtext{
-  font-family:'DM Sans',sans-serif;color:rgba(255,255,255,.78);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;
+  font-family:'Inter',sans-serif;color:rgba(255,255,255,.78);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;
   animation:splashFade .8s .1s ease both;
   z-index:1;
 }
@@ -226,21 +226,22 @@ body.page-ready{opacity:1;transform:translateY(0);}
   color:#0f172a;margin:0;
 }
 .hero-dynamic{
-  display:flex;align-items:flex-end;justify-content:center;gap:14px;padding-top:.75rem;font-size:1.2em;line-height:1.2;flex-wrap:wrap;
+  display:flex;align-items:flex-end;justify-content:center;gap:16px;padding-top:.75rem;font-size:clamp(1.25rem,2.4vw,1.65rem);line-height:1.05;flex-wrap:wrap;
 }
-.dynamic-prefix{color:#64748b;font-size:1.1em;font-weight:700;}
-.dynamic-text{position:relative;min-width:220px;max-width:280px;overflow:hidden;height:1.35em;display:inline-flex;align-items:flex-end;}
+.dynamic-prefix{color:#475569;font-size:1.05em;font-weight:700;letter-spacing:.02em;}
+.dynamic-text{position:relative;min-width:260px;max-width:360px;overflow:hidden;height:3.3rem;display:inline-flex;align-items:flex-end;}
 .r-word{
-  position:absolute;left:0;top:0;width:100%;white-space:nowrap;
+  position:absolute;left:0;top:0;white-space:nowrap;
   color:var(--blue);
-  font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:800;
-  opacity:0;transform:translateY(12px);
+  font-family:'Syne',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:clamp(1.75rem,4vw,2.8rem);font-weight:900;letter-spacing:-.03em;
+  opacity:0;transform:translateY(18px);
   transition:opacity .3s ease,transform .3s ease;
+  text-shadow:0 12px 24px rgba(34,70,245,.08);
 }
 .r-word:nth-child(1){animation:wordCycle 9s ease-in-out infinite;}
 .r-word:nth-child(2){animation:wordCycle 9s ease-in-out infinite 3s;}
 .r-word:nth-child(3){animation:wordCycle 9s ease-in-out infinite 6s;}
-@keyframes wordCycle{0%,10%{opacity:0;transform:translateY(10px);}12%,25%{opacity:1;transform:translateY(0);}27%,100%{opacity:0;transform:translateY(-10px);}}
+@keyframes wordCycle{0%,10%{opacity:0;transform:translateY(18px);}12%,28%{opacity:1;transform:translateY(0);}30%,100%{opacity:0;transform:translateY(-18px);}}
 .hero-desc{max-width:620px;color:#334155;font-size:1rem;line-height:1.7;margin:0;}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;}
 .meta-card{background:#f8fbff;border:1px solid rgba(15,23,42,.08);border-radius:22px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;}
@@ -695,8 +696,8 @@ body.page-ready{opacity:1;transform:translateY(0);}
   .hero-desc{font-size:1rem;max-width:100%;margin-bottom:1.75rem}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn-primary,.hero-actions .btn-outline{width:100%;justify-content:center}
-  .hero-dynamic{font-size:1.05em;gap:10px;}
-  .dynamic-text{min-width:180px;}
+  .hero-dynamic{font-size:clamp(1.15rem,3vw,1.45rem);gap:12px;}
+  .dynamic-text{min-width:220px;max-width:100%;height:auto;}
   .store-row{flex-direction:column;align-items:stretch}
   .store-btn{width:100%;max-width:100%;justify-content:center}
   .hero-stats{gap:18px;flex-direction:column;align-items:center}
