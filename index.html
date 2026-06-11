@@ -429,11 +429,11 @@
   .giveaway-row {
     background: #F9FAFB; border: 1.5px solid var(--border-light);
     border-radius: 14px; padding: 14px 16px; margin-bottom: 16px;
-    cursor: pointer; transition: border-color 0.15s;
+    transition: border-color 0.15s;
   }
   .giveaway-row:hover { border-color: #C7D7F9; }
   .giveaway-row.on { border-color: var(--blue); background: var(--blue-soft); }
-  .giveaway-row-top { display: flex; justify-content: space-between; align-items: center; }
+  .giveaway-row-top { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
   .giveaway-row-label { display: flex; align-items: center; gap: 9px; font-size: 0.87rem; font-weight: 600; color: var(--ink); }
   .giveaway-row-label i { color: var(--amber); }
   .toggle { width: 42px; height: 24px; background: #CBD5E1; border-radius: 40px; position: relative; transition: background 0.2s; flex-shrink: 0; }
@@ -472,6 +472,29 @@
     .nav-links, .launch-pill { display: none; }
     .ham { display: flex; }
   }
+  @media (max-width: 768px) {
+    .header {
+      padding: 0 16px;
+      height: 60px;
+      gap: 10px;
+    }
+    .logo-mark {
+      font-size: 1.2rem;
+      gap: 6px;
+      min-width: 0;
+      flex-shrink: 1;
+    }
+    .logo-mark img { width: 30px; height: 30px; border-radius: 8px; }
+    .header-right { gap: 8px; flex-shrink: 0; }
+    .btn-waitlist-nav {
+      padding: 9px 14px;
+      font-size: 0.78rem;
+      gap: 5px;
+    }
+    .btn-waitlist-nav .btn-label-long { display: none; }
+    .btn-waitlist-nav .btn-label-short { display: inline; }
+    .ham { flex-shrink: 0; }
+  }
   @media (max-width: 640px) {
     .features-grid, .testi-grid, .steps-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
@@ -484,7 +507,30 @@
     .sp-divider { display: none; }
     .amb-content { padding: 2rem; }
     .amb-stats { padding: 2rem; }
-    .modal-top, .modal-body { padding-left: 20px; padding-right: 20px; }
+    .modal-overlay { padding: 12px; align-items: flex-end; }
+    .modal {
+      border-radius: 24px 24px 0 0;
+      max-height: 92vh;
+      max-height: 92dvh;
+    }
+    .modal-top {
+      padding: 18px 18px 0;
+      align-items: center;
+      gap: 10px;
+    }
+    .modal-top-title { min-width: 0; flex: 1; }
+    .modal-top-title h3 {
+      font-size: 1.15rem;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .modal-top-title p { font-size: 0.76rem; line-height: 1.4; }
+    .modal-close-btn { width: 32px; height: 32px; margin-top: 0; flex-shrink: 0; }
+    .modal-body { padding: 16px 18px 24px; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+    .modal-rewards { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (min-width: 769px) {
+    .btn-waitlist-nav .btn-label-short { display: none; }
   }
 </style>
 </head>
@@ -512,7 +558,7 @@
   </ul>
   <div class="header-right">
     <span class="launch-pill">🚀 Aug 10, 2026</span>
-    <button class="btn-waitlist-nav" id="waitlistNavBtn"><i class="fas fa-gift"></i> Join Waitlist</button>
+    <button class="btn-waitlist-nav" id="waitlistNavBtn" aria-label="Join Waitlist"><i class="fas fa-gift"></i><span class="btn-label-long">Join Waitlist</span><span class="btn-label-short">Join</span></button>
   </div>
   <button class="ham" id="ham"><span></span><span></span><span></span></button>
 </header>
@@ -972,15 +1018,15 @@
     if (msgEl) { msgEl.className = 'form-msg'; msgEl.style.display = 'none'; }
   }
 
-  // Toggle giveaway
+  // Toggle giveaway — only the header row toggles (not the input fields)
   function toggleGiveaway() {
     giveaway = !giveaway;
     toggleSwitch?.classList.toggle('on', giveaway);
     giveawayFields?.classList.toggle('show', giveaway);
     giveawayRow?.classList.toggle('on', giveaway);
   }
-  toggleSwitch?.addEventListener('click', e => { e.stopPropagation(); toggleGiveaway(); });
-  giveawayRow?.addEventListener('click', e => { if (!toggleSwitch?.contains(e.target)) toggleGiveaway(); });
+  document.querySelector('.giveaway-row-top')?.addEventListener('click', toggleGiveaway);
+  giveawayFields?.addEventListener('click', e => e.stopPropagation());
 
   // Open buttons
   ['waitlistNavBtn','waitlistHeroBtn','drawerWaitlistBtn'].forEach(id => {
