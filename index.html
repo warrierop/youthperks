@@ -11,16 +11,14 @@
     <meta name="application-name" content="YouthPerks" />
     <meta name="theme-color" content="#10131c" />
     <link rel="canonical" href="https://youthperks.com/" />
-
-    <link rel="icon" href="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" type="image/jpeg" />
+    <link rel="icon" href="https://res.cloudinary.com/dqajtxu1g/image/upload/v1782033329/a4031333-f41d-497a-9a14-09049a053e20_lssaob.png" type="image/jpeg" />
     <link rel="icon" type="image/jpeg" sizes="16x16" href="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" />
     <link rel="icon" type="image/jpeg" sizes="32x32" href="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" />
     <link rel="icon" type="image/jpeg" sizes="192x192" href="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" />
     <link rel="shortcut icon" href="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" type="image/jpeg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dqajtxu1g/image/upload/v1782033329/a4031333-f41d-497a-9a14-09049a053e20_lssaob.png" />
     <meta name="msapplication-TileImage" content="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" />
     <meta name="msapplication-TileColor" content="#10131c" />
-
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="YouthPerks" />
     <meta property="og:locale" content="en_PK" />
@@ -33,12 +31,10 @@
     <meta name="twitter:description" content="Join the waitlist for Pakistan's student discount platform." />
     <meta name="twitter:image" content="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" />
     <meta name="twitter:site" content="@Youthperks" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -85,7 +81,6 @@
             }]
         }
     </script>
-
     <style>
         /* ── reset & vars ── */
         *,
@@ -95,7 +90,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --ink: #10131c;
             --ink-soft: #1c2230;
@@ -119,7 +113,6 @@
             --shadow: 0 1px 2px rgba(16, 19, 28, 0.04), 0 14px 44px rgba(16, 19, 28, 0.09);
             --header-h: 72px;
         }
-
         html {
             scroll-behavior: smooth;
         }
@@ -130,14 +123,12 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
         .display {
             font-family: 'Sora', 'Inter', sans-serif;
         }
         .mono {
             font-family: 'JetBrains Mono', monospace;
         }
-
         ::selection {
             background: var(--accent-soft);
             color: var(--ink);
@@ -155,7 +146,6 @@
             outline: 2px solid var(--blue);
             outline-offset: 2px;
         }
-
         /* ── splash ── */
         #splash {
             position: fixed;
@@ -247,7 +237,6 @@
                 transform: translateY(0);
             }
         }
-
         /* ── header ── */
         .header {
             position: fixed;
@@ -281,6 +270,19 @@
             width: auto;
             object-fit: contain;
             display: block;
+        }
+        .logo-text {
+            display: none;
+            align-items: center;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            white-space: nowrap;
+        }
+        .logo-text .accent {
+            color: var(--blue);
         }
         .nav {
             display: flex;
@@ -351,7 +353,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background: var(--ink);
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
             color: white;
             font-size: 0.8125rem;
             font-weight: 600;
@@ -360,19 +362,19 @@
             border: none;
             cursor: pointer;
             text-decoration: none;
-            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, filter 0.25s ease;
             white-space: nowrap;
         }
         .btn-primary:hover {
-            background: var(--ink-soft);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(16, 19, 28, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(16, 19, 28, 0.22);
+            filter: brightness(1.08);
         }
         .btn-primary.blue {
-            background: var(--blue);
+            background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
         }
         .btn-primary.blue:hover {
-            background: var(--blue-dark);
+            box-shadow: 0 10px 26px rgba(58, 82, 224, 0.32);
         }
         .btn-outline {
             display: inline-flex;
@@ -413,7 +415,6 @@
             border-radius: 2px;
             transition: 0.2s;
         }
-
         /* ── mobile nav ── */
         .nav-overlay {
             position: fixed;
@@ -475,7 +476,6 @@
             border-radius: 12px;
             color: var(--ink);
         }
-
         /* ── hero ── */
         .hero {
             position: relative;
@@ -585,6 +585,10 @@
         }
         .hero h1 .accent {
             color: var(--blue);
+            background: linear-gradient(135deg, var(--blue) 10%, var(--accent) 55%, #7c93ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .hero-lead {
             font-size: clamp(1rem, 2vw, 1.125rem);
@@ -624,25 +628,35 @@
                 transform: translateY(0);
             }
         }
-
         /* ── hero right panel ── */
         .hero-panel {
             display: flex;
             flex-direction: column;
-            gap: 22px;
+            justify-content: center;
+            height: 100%;
             opacity: 0;
             animation: heroIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
         }
-
-        /* ── ID card ── */
+        /* ── ID card (now sits under hero copy) ── */
         .id-card-stage {
             perspective: 1100px;
             display: flex;
-            justify-content: center;
-            padding: 8px 0 4px;
+            justify-content: flex-start;
+            padding: 0;
+            margin-top: 36px;
+            opacity: 0;
+            animation: heroIn 0.7s ease 0.8s forwards, idCardFloat 5s ease-in-out 1.5s infinite;
+        }
+        @keyframes idCardFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
         }
         .id-card {
-            width: min(340px, 100%);
+            width: min(320px, 100%);
             aspect-ratio: 1.6/1;
             border-radius: 18px;
             background: linear-gradient(150deg, #161b29 0%, #10131c 55%, #0b0d14 100%);
@@ -770,14 +784,24 @@
             box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
             display: none;
         }
-
         /* ── waitlist card ── */
         .hero-waitlist {
+            position: relative;
             background: white;
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             padding: clamp(22px, 3.6vw, 32px);
             box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .hero-waitlist::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), var(--accent), var(--teal));
         }
         .hero-waitlist-head {
             margin-bottom: 22px;
@@ -806,7 +830,6 @@
             padding: 5px 12px;
             border-radius: 999px;
         }
-
         /* ── forms ── */
         .form-group {
             margin-bottom: 14px;
@@ -937,7 +960,7 @@
             padding: 13px;
             border: none;
             border-radius: 999px;
-            background: var(--blue);
+            background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
             color: white;
             font-size: 0.9375rem;
             font-weight: 700;
@@ -946,17 +969,19 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: background 0.2s, transform 0.15s;
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, filter 0.25s ease;
             margin-top: 4px;
         }
         .btn-submit:hover {
-            background: var(--blue-dark);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(58, 82, 224, 0.3);
+            filter: brightness(1.06);
         }
         .btn-submit:disabled {
             opacity: 0.55;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
         .form-msg {
             margin-top: 12px;
@@ -980,7 +1005,6 @@
             background: var(--blue-soft);
             color: var(--blue-dark);
         }
-
         /* ── sections ── */
         .section {
             padding: clamp(64px, 10vw, 96px) clamp(16px, 4vw, 48px);
@@ -1018,7 +1042,6 @@
             color: var(--sub);
             font-size: 1rem;
         }
-
         /* ── countdown ── */
         .countdown-wrap {
             padding: 0 clamp(16px, 4vw, 48px) clamp(48px, 8vw, 72px);
@@ -1090,7 +1113,6 @@
             font-size: 0.8125rem;
             opacity: 0.45;
         }
-
         /* ── features ── */
         .features-grid {
             display: grid;
@@ -1098,23 +1120,33 @@
             gap: 16px;
         }
         .feat {
+            position: relative;
             background: white;
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             padding: 28px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .feat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .feat:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow);
+            border-color: rgba(58, 82, 224, 0.25);
         }
-        .feat.dark {
-            background: var(--ink);
-            border-color: transparent;
-            color: white;
-        }
-        .feat.dark p {
-            color: rgba(255, 255, 255, 0.55);
+        .feat:hover::before {
+            transform: scaleX(1);
         }
         .feat-icon {
             width: 44px;
@@ -1127,10 +1159,12 @@
             color: var(--blue);
             font-size: 1.1rem;
             margin-bottom: 16px;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.35s, color 0.35s;
         }
-        .feat.dark .feat-icon {
-            background: rgba(255, 255, 255, 0.1);
+        .feat:hover .feat-icon {
+            background: var(--blue);
             color: white;
+            transform: translateY(-2px) scale(1.06);
         }
         .feat h3 {
             font-family: 'Sora', sans-serif;
@@ -1143,7 +1177,6 @@
             color: var(--sub);
             line-height: 1.6;
         }
-
         /* ── steps ── */
         .steps {
             display: grid;
@@ -1178,7 +1211,6 @@
             font-size: 0.8125rem;
             color: var(--sub);
         }
-
         /* ── founders ── */
         .founders-section {
             background: var(--muted);
@@ -1195,7 +1227,7 @@
             padding: 28px 24px;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
         }
         .founder:hover {
             transform: translateY(-4px);
@@ -1211,7 +1243,7 @@
             background: linear-gradient(90deg, var(--blue), var(--accent));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .founder:hover::before {
             transform: scaleX(1);
@@ -1222,15 +1254,9 @@
             grid-template-columns: auto 1fr;
             gap: 24px;
             align-items: start;
-            background: var(--ink);
-            border-color: transparent;
-            color: white;
         }
-        .founder.lead p {
-            color: rgba(255, 255, 255, 0.65);
-        }
-        .founder.lead .founder-role {
-            color: var(--accent);
+        .founder.lead::before {
+            transform: scaleX(1);
         }
         .founder-avatar {
             width: 56px;
@@ -1274,7 +1300,6 @@
             color: var(--sub);
             line-height: 1.65;
         }
-
         /* ── brand partner ── */
         .partner-banner {
             margin: 0 clamp(16px, 4vw, 48px) clamp(48px, 8vw, 72px);
@@ -1331,7 +1356,6 @@
             width: 18px;
             text-align: center;
         }
-
         /* ── ambassador ── */
         .ambassador {
             margin: 0 clamp(16px, 4vw, 48px) clamp(48px, 8vw, 72px);
@@ -1407,7 +1431,6 @@
             font-size: 0.74rem;
             color: rgba(255, 255, 255, 0.45);
         }
-
         /* ── full waitlist section ── */
         .waitlist-section {
             background: linear-gradient(180deg, var(--blue-soft) 0%, white 100%);
@@ -1423,7 +1446,6 @@
             padding: clamp(28px, 5vw, 40px);
             box-shadow: var(--shadow);
         }
-
         /* ── FAQ ── */
         .faq-wrap {
             max-width: 720px;
@@ -1467,7 +1489,6 @@
             max-height: 220px;
             padding: 0 20px 16px;
         }
-
         /* ── footer ── */
         .footer {
             background: var(--ink);
@@ -1484,11 +1505,19 @@
             gap: clamp(32px, 5vw, 48px);
             margin-bottom: 48px;
         }
-        .footer-brand img {
-            height: 30px;
-            width: auto;
+        .footer-logo-chip {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            padding: 8px 14px;
+            border-radius: 10px;
             margin-bottom: 16px;
-            filter: brightness(0) invert(1);
+        }
+        .footer-logo-chip img {
+            height: 24px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
         .footer-brand p {
             font-size: 0.875rem;
@@ -1555,7 +1584,6 @@
             font-size: 0.8125rem;
             color: rgba(255, 255, 255, 0.35);
         }
-
         /* ── reveal ── */
         .reveal {
             opacity: 0;
@@ -1575,7 +1603,6 @@
         .reveal-delay-3 {
             transition-delay: 0.3s;
         }
-
         @media (prefers-reduced-motion: reduce) {
             *,
             *::before,
@@ -1585,7 +1612,6 @@
                 transition-duration: 0.01ms !important;
             }
         }
-
         /* ── responsive ── */
         @media (max-width: 1024px) {
             .hero-inner {
@@ -1599,6 +1625,9 @@
             }
             .hero-badge,
             .hero-stats {
+                justify-content: center;
+            }
+            .id-card-stage {
                 justify-content: center;
             }
             .hero-panel {
@@ -1640,7 +1669,6 @@
                 display: flex;
             }
         }
-
         @media (max-width: 640px) {
             :root {
                 --header-h: 64px;
@@ -1688,13 +1716,11 @@
                 width: min(300px, 86%);
             }
         }
-
         @media (min-width: 641px) {
             .btn-primary .label-short {
                 display: none;
             }
         }
-
         @media (hover: none) {
             .id-card {
                 transform: rotateY(0deg) rotateX(0deg) !important;
@@ -1703,7 +1729,6 @@
     </style>
 </head>
 <body>
-
     <!-- ─── Splash ─── -->
     <div id="splash" aria-hidden="true">
         <div class="splash-mark">
@@ -1712,11 +1737,11 @@
         </div>
         <div class="splash-tag">Verified student savings, Pakistan</div>
     </div>
-
     <!-- ─── Header ─── -->
     <header class="header" id="header">
         <a href="#home" class="logo-link" aria-label="YouthPerks home">
-            <img src="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" alt="YouthPerks logo">
+            <img src="https://res.cloudinary.com/dqajtxu1g/image/upload/v1782033329/a4031333-f41d-497a-9a14-09049a053e20_lssaob.png" alt="YouthPerks logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">
+            <span class="logo-text display">youth<span class="accent">perks</span></span>
         </a>
         <nav aria-label="Main navigation">
             <ul class="nav">
@@ -1745,7 +1770,6 @@
             </button>
         </div>
     </header>
-
     <div class="nav-overlay" id="navOverlay"></div>
     <nav class="nav-panel" id="navPanel" aria-label="Mobile navigation">
         <a href="#waitlist">Waitlist</a>
@@ -1763,7 +1787,6 @@
             <a href="https://x.com/Youthperks" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
         </div>
     </nav>
-
     <main>
         <!-- ─── Hero ─── -->
         <section class="hero" id="home">
@@ -1792,9 +1815,6 @@
                             <span>launch date</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="hero-panel">
                     <div class="id-card-stage" id="idCardStage" aria-hidden="true">
                         <div class="id-card" id="idCard">
                             <span class="id-card-hole"></span>
@@ -1822,7 +1842,8 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="hero-panel">
                     <div class="hero-waitlist" id="waitlist">
                         <div class="hero-waitlist-head">
                             <h2 class="display">Get early access</h2>
@@ -1882,7 +1903,6 @@
                 </div>
             </div>
         </section>
-
         <!-- ─── Countdown ─── -->
         <div class="countdown-wrap reveal">
             <div class="countdown">
@@ -1897,7 +1917,6 @@
                 <p class="countdown-date">August 10, 2026 · 4:00 PM PKT</p>
             </div>
         </div>
-
         <!-- ─── Features ─── -->
         <section class="section reveal" id="features">
             <div class="section-head">
@@ -1906,7 +1925,7 @@
                 <p class="section-desc">Verified deals. Zero hassle. Free forever.</p>
             </div>
             <div class="features-grid">
-                <article class="feat dark reveal-delay-1">
+                <article class="feat reveal-delay-1">
                     <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Verified student deals</h3>
                     <p>Real offers, hand checked. No fake coupons or expired codes.</p>
@@ -1938,7 +1957,6 @@
                 </article>
             </div>
         </section>
-
         <!-- ─── How it works ─── -->
         <section class="section reveal" id="how">
             <div class="section-head">
@@ -1972,7 +1990,6 @@
                 </div>
             </div>
         </section>
-
         <!-- ─── Founders ─── -->
         <section class="section founders-section reveal" id="team">
             <div class="section-head">
@@ -2015,7 +2032,6 @@
                 </article>
             </div>
         </section>
-
         <!-- ─── Brand partners ─── -->
         <section class="partner-banner reveal" id="partners">
             <div>
@@ -2034,7 +2050,6 @@
                 </a>
             </div>
         </section>
-
         <!-- ─── Ambassador ─── -->
         <section class="ambassador reveal" id="ambassador">
             <div class="amb-content">
@@ -2058,7 +2073,6 @@
                 <div class="amb-stat"><strong>2026</strong><span>Program launch year</span></div>
             </div>
         </section>
-
         <!-- ─── Secondary waitlist ─── -->
         <section class="section waitlist-section reveal">
             <div class="section-head">
@@ -2099,7 +2113,6 @@
                 </form>
             </div>
         </section>
-
         <!-- ─── FAQ ─── -->
         <section class="section reveal" id="faq">
             <div class="section-head">
@@ -2130,13 +2143,15 @@
             </div>
         </section>
     </main>
-
     <!-- ─── Footer ─── -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" alt="YouthPerks logo">
+                    <span class="footer-logo-chip">
+                        <img src="https://i.ibb.co/pBsDDg3X/Written-logo.jpg" alt="YouthPerks logo" onerror="this.parentElement.style.display='none';this.parentElement.nextElementSibling.querySelector('.logo-text').style.display='inline-flex';">
+                    </span>
+                    <span class="logo-text display" style="display:none;color:white;margin-bottom:16px;">youth<span class="accent">perks</span></span>
                     <p>Pakistan's student discount platform. Verified savings for the next generation.</p>
                     <div class="footer-socials">
                         <a href="https://www.instagram.com/youthperk.pk/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -2176,13 +2191,11 @@
             </div>
         </div>
     </footer>
-
     <script>
         (function() {
             const API_URL = 'https://youth-backend-qx50.onrender.com';
             const BASE_WAITLIST_COUNT = 10;
             const STORAGE_KEY = 'youthperks_waitlist_entries';
-
             /* ── splash ── */
             function hideSplash() {
                 document.getElementById('splash')?.classList.add('gone');
@@ -2194,25 +2207,21 @@
                 setTimeout(hideSplash, remaining);
             });
             setTimeout(hideSplash, 2500);
-
             /* ── header scroll ── */
             const header = document.getElementById('header');
             window.addEventListener('scroll', function() {
                 header?.classList.toggle('scrolled', window.scrollY > 20);
             }, { passive: true });
-
             /* ── mobile nav ── */
             const menuBtn = document.getElementById('menuBtn');
             const navPanel = document.getElementById('navPanel');
             const navOverlay = document.getElementById('navOverlay');
-
             function openNav() {
                 navPanel?.classList.add('open');
                 navOverlay?.classList.add('open');
                 menuBtn?.setAttribute('aria-expanded', 'true');
                 document.body.style.overflow = 'hidden';
             }
-
             function closeNav() {
                 navPanel?.classList.remove('open');
                 navOverlay?.classList.remove('open');
@@ -2224,12 +2233,9 @@
             navPanel?.querySelectorAll('a').forEach(function(a) {
                 a.addEventListener('click', closeNav);
             });
-
             /* ── countdown ── */
             const target = new Date(Date.UTC(2026, 7, 10, 11, 0, 0));
-
             function pad(n) { return n.toString().padStart(2, '0'); }
-
             function updateCountdown() {
                 const diff = target - Date.now();
                 if (diff <= 0) {
@@ -2246,7 +2252,6 @@
             }
             updateCountdown();
             setInterval(updateCountdown, 1000);
-
             /* ── waitlist count ── */
             async function fetchCount() {
                 var total = BASE_WAITLIST_COUNT;
@@ -2265,7 +2270,6 @@
             }
             fetchCount();
             setInterval(fetchCount, 30000);
-
             /* ── reveal on scroll ── */
             var revealObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -2275,7 +2279,6 @@
             document.querySelectorAll('.reveal').forEach(function(el) {
                 revealObserver.observe(el);
             });
-
             /* ── FAQ ── */
             document.querySelectorAll('.faq-q').forEach(function(q) {
                 q.addEventListener('click', function() {
@@ -2285,7 +2288,6 @@
                     if (!wasOpen) item.classList.add('open');
                 });
             });
-
             /* ── giveaway toggle ── */
             var heroGiveaway = false;
             var heroToggle = document.getElementById('heroGiveawayToggle');
@@ -2298,7 +2300,6 @@
                 heroToggle?.classList.toggle('on', heroGiveaway);
             });
             heroGiveawayFields?.addEventListener('click', function(e) { e.stopPropagation(); });
-
             /* ── ID card tilt ── */
             var idStage = document.getElementById('idCardStage');
             var idCard = document.getElementById('idCard');
@@ -2313,7 +2314,6 @@
                     idCard.style.transform = 'rotateY(-6deg) rotateX(3deg)';
                 });
             }
-
             /* ── ID number scramble ── */
             var idNumberEl = document.getElementById('idCardNumber');
             if (idNumberEl) {
@@ -2333,7 +2333,6 @@
                     idNumberEl.textContent = partial;
                 }, 90);
             }
-
             /* ── helper: show message ── */
             function showMessage(el, text, type) {
                 if (!el) return;
@@ -2343,7 +2342,6 @@
                     setTimeout(function() { el.className = 'form-msg'; }, 6000);
                 }
             }
-
             /* ── store locally as fallback ── */
             function storeLocally(entry) {
                 try {
@@ -2352,12 +2350,10 @@
                     localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
                 } catch (_) { /* ignore */ }
             }
-
             /* ── submit with fallback ── */
             async function submitWaitlist(payload, submitBtn, msgEl, defaultHtml) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting';
-
                 // Try the API first
                 try {
                     var res = await fetch(API_URL + '/api/waitlist/join', {
@@ -2365,7 +2361,6 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
-
                     // If 409 (already exists), treat as success
                     if (res.status === 409) {
                         showMessage(msgEl, 'You are already on the waitlist.', 'success');
@@ -2373,7 +2368,6 @@
                         submitBtn.innerHTML = defaultHtml;
                         return true;
                     }
-
                     if (res.ok) {
                         var data = await res.json();
                         showMessage(msgEl, data.message || 'You are on the list. Check your email.', 'success');
@@ -2382,7 +2376,6 @@
                         fetchCount();
                         return true;
                     }
-
                     // If server error (500) or any other error, fall back to local storage
                     console.warn('API error, falling back to local storage:', res.status);
                     storeLocally(payload);
@@ -2391,7 +2384,6 @@
                     submitBtn.innerHTML = defaultHtml;
                     fetchCount();
                     return true;
-
                 } catch (err) {
                     // Network error — fall back to local storage
                     console.warn('Network error, falling back to local storage:', err);
@@ -2403,7 +2395,6 @@
                     return true;
                 }
             }
-
             /* ── hero form ── */
             document.getElementById('heroWaitlistForm')?.addEventListener('submit', async function(e) {
                 e.preventDefault();
@@ -2415,7 +2406,6 @@
                 var inst = document.getElementById('heroInstitution').value.trim();
                 var msgEl = document.getElementById('heroMessage');
                 var btn = document.getElementById('heroSubmit');
-
                 if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                     return showMessage(msgEl, 'Please enter a valid email address.', 'error');
                 }
@@ -2423,9 +2413,7 @@
                 if (!edu) return showMessage(msgEl, 'Please select your education level.', 'error');
                 if (!city) return showMessage(msgEl, 'Please enter your city.', 'error');
                 if (heroGiveaway && !inst) return showMessage(msgEl, 'Please enter your institution for the giveaway.', 'error');
-
                 var fullPhone = phone ? '+92' + phone.replace(/^0/, '') : '';
-
                 await submitWaitlist({
                     email: email,
                     phone: fullPhone,
@@ -2437,7 +2425,6 @@
                     referralSource: 'hero_form'
                 }, btn, msgEl, '<i class="fas fa-bell"></i> Join the Waitlist');
             });
-
             /* ── footer form ── */
             document.getElementById('footerWaitlistForm')?.addEventListener('submit', async function(e) {
                 e.preventDefault();
@@ -2447,14 +2434,12 @@
                 var city = document.getElementById('footerCity').value.trim();
                 var msgEl = document.getElementById('footerMessage');
                 var btn = document.getElementById('footerSubmit');
-
                 if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                     return showMessage(msgEl, 'Please enter a valid email address.', 'error');
                 }
                 if (!age) return showMessage(msgEl, 'Please enter your age.', 'error');
                 if (!edu) return showMessage(msgEl, 'Please select your education level.', 'error');
                 if (!city) return showMessage(msgEl, 'Please enter your city.', 'error');
-
                 await submitWaitlist({
                     email: email,
                     phone: '',
@@ -2466,7 +2451,6 @@
                     referralSource: 'footer_form'
                 }, btn, msgEl, '<i class="fas fa-bell"></i> Join the Waitlist');
             });
-
             /* ── background sync: retry locally stored entries ── */
             async function syncLocalEntries() {
                 try {
@@ -2475,7 +2459,6 @@
                     var entries = JSON.parse(raw);
                     var unsynced = entries.filter(function(e) { return !e.synced; });
                     if (unsynced.length === 0) return;
-
                     for (var i = 0; i < unsynced.length; i++) {
                         var entry = unsynced[i];
                         try {
@@ -2498,17 +2481,14 @@
                             }
                         } catch (_) { /* keep trying later */ }
                     }
-
                     localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
                 } catch (_) { /* ignore */ }
             }
-
             // Sync every 30 seconds once the page is loaded
             window.addEventListener('load', function() {
                 setTimeout(syncLocalEntries, 3000);
                 setInterval(syncLocalEntries, 30000);
             });
-
         })();
     </script>
 </body>
